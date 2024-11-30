@@ -1,0 +1,218 @@
+@import url(https://fonts.googleapis.com/css?family=Oleo+Script);
+
+body {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/xmas.jpg");
+  color: #fff;
+  /* font-family: 'Oleo Script', cursive;  */
+  padding: 20px;
+  font-weight: 400;
+  background-size: cover; 
+  background-position: center;
+  margin: 0;
+  
+}
+h1{
+  font-size: 5vw; 
+  
+}
+h3{
+  font-size: 1.5vw; 
+  
+}
+h1 ,h3{
+  margin:0;
+  text-align: center;
+}
+
+ul {
+  margin:0 auto 30px auto;
+  padding:0;
+  list-style-type:none;
+  max-width:900px;
+  width: 100%;
+  text-align: center;
+  user-select: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Responsive grid */
+  gap:50px; /* Space between items */
+  max-width: 100%; /* Full width */
+  
+
+}
+
+li {
+  font-weight: 400;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: inline-block;
+  color:#111;
+  font-size: 4vw;
+  cursor:pointer;
+  font-size: 26px;
+  padding:15px;
+  margin:25px 12px;
+  width: 130px;
+  height:130px;
+  line-height: 100px;
+  text-align:center;
+  position: relative;
+  vertical-align:top;
+  user-select: none;
+  perspective: 800px;
+  transition: all 0.4s ease-in-out;
+}
+
+ul li:last-child {
+  
+  
+  display:block;
+  clear:both;
+  margin: 20px auto 0 auto;
+  width: 200px;
+  height: 275px;
+}
+
+ul li:last-child .door {
+  font-size: 7vw;
+  width: 200px;
+  height: 275px;
+  line-height: 240px;
+}
+
+ul li:last-child .revealed {
+  line-height: 123px;
+  font-size: 50px;
+  
+}
+
+.door {
+  user-select: none;
+  color:#fff;
+  font-size: 7dvh;
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: #91c1cc;
+  box-sizing: border-box;
+  border-top: 2px #eee dashed;
+  border-right: 2px #eee dashed;
+  border-bottom: 2px #eee dashed;
+  border-left: 1px #eee solid;
+  border-radius: 6px;
+  padding:15px;
+  width: 130px;
+  height:130px;
+  transform-origin: 0 40%; 
+  transition: all 0.4s ease-in-out;
+  transform-style: preserve-3d;
+  
+}
+
+.current .door {
+  background-color: #7EAD44;
+}
+
+.current .door.open{
+  color: #7EAD44;
+}
+
+.revealed {
+  user-select: none;
+  font-size: clamp(14px, 3vw, 20px);
+  line-height: 1.2; 
+  
+  
+}
+
+#message {
+  box-sizing: border-box;
+  color: #222;
+  display: none;
+  font-size: 12px;
+  padding: 20px;
+  background: #eddecb;
+  max-width: 80%;
+  width: 100%;
+  border-radius: 15px;
+  margin: 0 auto;
+  
+}
+
+.open {
+  box-shadow: 14px 0px 15px -1px rgba(0,0,0,0.2);
+  color: #91c1cc;
+  transform: rotate3d(0, 1, 0, -98deg);
+}
+
+.jiggle {
+  animation: jiggle 0.2s infinite;
+  transform: rotate(-1deg);
+}
+
+@keyframes jiggle {
+  0% {
+        transform: rotate(-1deg);
+  }
+  50% {
+      transform: rotate(1deg);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  li {
+    margin:25px 20px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+	body {
+		background-size:150px;
+	}
+	
+	p {
+		right: 6%;
+		top: 20%;
+		bottom: auto; 
+		margin-left: auto;
+		left: auto;
+    font-size:10px;
+	}
+}
+.premise , .about {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px; /* Add some padding for spacing */
+  border-radius: 10px; /* Rounded corners for better aesthetics */
+  max-width: 90%; /* Constrain width for better readability */
+  margin: 20px auto; /* Center-align with margin */
+  font-size: 30px; /* Adjust font size for readability */
+  line-height: 1.3; /* Improve spacing between lines */
+  color: #fff; /* Keep text color white for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add slight shadow for depth */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Two columns: larger for <ul>, smaller for <p> */
+  gap: 20px; /* Space between the columns */
+  align-items: start; /* Align items at the start of the container */
+  max-width: 1200px; /* Optional: Constrain the container's width */
+  margin: 0 auto; /* Center the container */
+}
+
+ul {
+  margin: 0; /* Reset margin for proper alignment */
+  padding: 0; /* Reset padding for proper alignment */
+  list-style-type: none; /* Remove default list styling */
+}
+
+#message {
+  font-size: 25px; /* Adjust font size for readability */
+  line-height:1.7; /* Improve line spacing */
+  background-color: rgba(152, 142, 142, 0.5); /* Optional: Add a semi-transparent background */
+  padding: 15px; /* Add padding for spacing */
+  border-radius: 10px; /* Add rounded corners */
+  color: white; /* Text color for readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+}
